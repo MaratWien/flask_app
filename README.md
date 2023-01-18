@@ -1,2 +1,2 @@
-# flask_app
+# Auth on bloging web-app.
 app-blog with auth

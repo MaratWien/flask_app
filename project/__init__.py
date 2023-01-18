@@ -11,8 +11,10 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
 
+    path_to_db = path.realpath(__file__).replace('__init__.py', 'db.sqlite')
+
     app.config['SECRET_KEY'] = 'secret-key-goes-here'
-    app.config['SQLALCHEMY_DATABASE_URI'] = r'sqlite:///D:\Development\Flask\andrey_project\project\db.sqlite'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + path_to_db
 
     db.init_app(app)
 
